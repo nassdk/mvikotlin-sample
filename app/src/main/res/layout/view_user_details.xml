@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:background="#8440D3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="User login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Name"
+        android:textColor="#8C8888"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/nameTitle"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        tools:text="Имя" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/companyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Company"
+        android:textColor="#8C8888"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/companyTitle"
+        app:layout_constraintTop_toBottomOf="@id/nameTitle"
+        tools:text="Компания" />
+
+    <FrameLayout
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
