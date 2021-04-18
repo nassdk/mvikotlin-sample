@@ -22,12 +22,12 @@ class UserDetailsStoreFactory(
         object : UserDetailsStore, Store<Intent, State, Label> by storeFactory.create(
             name = "UserDetailStoreFactory",
             initialState = State(),
-            bootstrapper = BootstrapperImpl,
+            bootstrapper = BootstrapperImpl(),
             executorFactory = ::ExecutorImpl,
-            reducer = ReducerImpl
+            reducer = ReducerImpl()
         ) {}
 
-    private object BootstrapperImpl : SuspendBootstrapper<Action>() {
+    private inner class BootstrapperImpl : SuspendBootstrapper<Action>() {
 
         override suspend fun bootstrap() {
             dispatch(Action.LoadUserDetails)
@@ -68,7 +68,7 @@ class UserDetailsStoreFactory(
         }
     }
 
-    private object ReducerImpl : Reducer<State, Result> {
+    private inner class ReducerImpl : Reducer<State, Result> {
 
         override fun State.reduce(result: Result) = when (result) {
             Result.Loading -> copy(loading = true)
