@@ -16,7 +16,7 @@ import org.koin.android.ext.android.inject
 class UserListFragment : BaseFragment(R.layout.screen_user_list) {
 
     private val viewBinding: ScreenUserListBinding by viewBinding()
-    private val store: UserListStore by inject()
+    private val store: UserListStore by scopeInject()
 
     override fun prepareUi() {
 

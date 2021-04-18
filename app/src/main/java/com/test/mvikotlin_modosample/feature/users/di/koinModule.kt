@@ -22,13 +22,13 @@ val usersFeatureModule = module {
 
     single { LoadUsersListUseCase(repository = get()) }
 
-//    scope<UserListFragment> {
-        single {
+    scope<UserListFragment> {
+        store {
             UserListStoreFactory(
                 storeFactory = DefaultStoreFactory,
                 loadUsersUseCase = get(),
                 modo = get()
             ).create()
         }
-//    }
+    }
 }

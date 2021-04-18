@@ -14,13 +14,12 @@ import com.test.mvikotlin_modosample.feature.userdetails.presentation.main.UserD
 import com.test.mvikotlin_modosample.feature.userdetails.presentation.main.UserDetailsMainViewImpl
 import com.test.mvikotlin_modosample.feature.userdetails.presentation.toolbar.UserDetailsToolbarConnections
 import com.test.mvikotlin_modosample.feature.userdetails.presentation.toolbar.UserDetailsToolbarViewImpl
-import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
 class UserDetailsFragment : BaseFragment(R.layout.screen_user_details) {
 
     private val viewBinding: ScreenUserDetailsBinding by viewBinding()
-    private val store: UserDetailsStore by inject { parametersOf(userLogin) }
+    private val store: UserDetailsStore by scopeInject { parametersOf(userLogin) }
 
     private val userLogin by lazy {
         arguments?.getString(ARG_USER_LOGIN, "").orEmpty()

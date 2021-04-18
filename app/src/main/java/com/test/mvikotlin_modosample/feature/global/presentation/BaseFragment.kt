@@ -26,16 +26,16 @@ abstract class BaseFragment(layoutRes: Int) : Fragment(layoutRes) {
         prepareUi()
         initBindings()
     }
-//
-//    protected val screenScope: Scope = createScreenScope()
-//
-//    protected inline fun <reified T : BaseFragment> T.createScreenScope(): Scope =
-//        this@createScreenScope.getOrCreateScope()
-//
-//    protected inline fun <reified T> scopeInject(
-//        qualifier: Qualifier? = null,
-//        noinline parameters: ParametersDefinition? = null
-//    ): Lazy<T> = screenScope.inject(qualifier, parameters)
+
+    protected val screenScope: Scope = createScreenScope()
+
+    protected inline fun <reified T : BaseFragment> T.createScreenScope(): Scope =
+        this@createScreenScope.getOrCreateScope()
+
+    protected inline fun <reified T> scopeInject(
+        qualifier: Qualifier? = null,
+        noinline parameters: ParametersDefinition? = null
+    ): Lazy<T> = screenScope.inject(qualifier, parameters)
 
     protected fun <Model : Any, Event : Any, State : Any, Intent : Any>
             MviView<Model, Event>.bind(
@@ -55,10 +55,5 @@ abstract class BaseFragment(layoutRes: Int) : Fragment(layoutRes) {
         viewConnections: ViewConnections<State, Intent, Model, Event>
     ) {
         bind(store, viewConnections.stateToModel, viewConnections.eventToIntent)
-    }
-
-    override fun onDestroy() {
-//        screenScope.close()
-        super.onDestroy()
     }
 }
