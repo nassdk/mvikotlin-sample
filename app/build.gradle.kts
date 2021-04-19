@@ -46,37 +46,17 @@ repositories {
 
 dependencies {
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementAndroidX()
+    implementMviKotlin()
+    implementDi()
+    implementNetworking()
+    implementNavigationHelper()
 
-    implementation("org.koin:koin-android:2.1.6")
-    implementation("org.koin:koin-androidx-scope:2.1.6")
-//    implementation("org.koin:koin-test:2.1.6")
-
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
-
-    implementation("com.arkivanov.mvikotlin:mvikotlin:2.0.1")
-    implementation("com.arkivanov.mvikotlin:mvikotlin-main:2.0.1")
-    implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:2.0.1")
-
-    implementation("com.github.terrakok:modo:0.6.1")
-    implementation("com.github.terrakok:modo-render-android-fm:0.6.1")
-
-    implementation("com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:1.4.1")
-
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0")
-
-    implementation("com.jakewharton.timber:timber:4.7.1")
-
-    implementation("io.coil-kt:coil:1.1.1")
+    implementation(Deps.kotlin)
+    implementation(Deps.coroutines)
+    implementation(Deps.viewBindingDelegate)
+    implementation(Deps.timber)
+    implementation(Deps.adapterDelegate)
+    implementation(Deps.material)
+    implementation(Deps.coil)
 }
