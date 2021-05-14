@@ -1,6 +1,7 @@
 package com.test.mvikotlin_modosample.feature.global.network.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.test.mvikotlin_modosample.BuildConfig
 import com.test.mvikotlin_modosample.feature.global.network.ApiService
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
@@ -24,8 +25,7 @@ val dataModule = module {
         }
 
         val okHttpClient = OkHttpClient.Builder().apply {
-//            if (BuildConfig.DEBUG)
-            addInterceptor(loggingInterceptor)
+            if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor)
         }
 
         val contentType = "application/json".toMediaType()
